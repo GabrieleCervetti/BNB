@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
 section	{
+	display: block;
+	position: relative;
 	margin-top: 3rem;	
     margin-right: 5%;
     margin-left: 5%;
@@ -12,7 +14,10 @@ section	{
 	margin-left: 0.5%;
 }
 
-
+.card	{
+	margin-left: 5%;
+    margin-bottom: 3%;
+}
 
 
 footer	{
