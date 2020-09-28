@@ -263,15 +263,6 @@
                     
             commentsList.append(newComment);
 
-            let selectorItem = '#comment-item-' + (commentsArray.length + 1);
-
-            $(selectorItem + ' .comment').css({
-                'padding': '.5rem 0 .5rem 1%'
-            });
-
-            $(selectorItem).effect('highlight', {color: "#f4f4f4"}, 2500);
-
-				commentsArray.push(comment);
         });
     });
     </script>

@@ -1,5 +1,18 @@
 @charset "UTF-8";
 
-footer{
+section	{
+	margin-top: 3rem;	
+    margin-right: 5%;
+    margin-left: 5%;
+    padding-top: 1rem;
+    padding-bottom: 1rem; 
+}
+
+.title	{
+	margin-left: 1.5%;
+}
+
+
+footer	{
 	width: 100%;
 }
