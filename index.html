@@ -133,31 +133,18 @@
                             <aside>                
                                 <aside class="card border-0 shadow">
                                     <div class="card-body">
-                                        <h2 class="card-title-right">Scopri di più</h2>
-										<ul>
-											<li>
-												<a class="find-out-more" href="./beachHouse.html">                                 
-													Una splendida casa al mare
-												</a>
-											</li>
-                    
-											<br>
-                    
-											<li>
-												<a class="find-out-more" href="./mountainHouse.html">                                    
-													Una bellissima casa in montagna                                    
-												</a>
-											</li>
-                    
-											<br>
-                    
-											<li>
-												<a class="find-out-more" href="./lakeHouse.html">                                   
-													Una suggestiva casa al lago                                 
-												</a>
-											</li>
-										</ul>
-                                                
+                                        <h2 class="card-title-right">Commenti</h2>
+											<div id="comments-div">
+                                                <p class="comments-empty">
+                                                Nessun commento.
+                                                </p>
+                                            </div>
+											<div class="comment-inp input-group form-group">				
+                                                <textarea class="text-area-comment form-control" placeholder="Scrivi qui il tuo commento..." id="exampleFormControlTextarea1" rows="2"></textarea>
+                                            </div>
+                                            <div class="btn-div-comment form-group contact-form">
+                                                <input type="submit" value="Lascia un commento" class="submit-comment btn btn-primary">
+                                            </div>
                                     </div>
                                 </aside>
                             </aside>
@@ -244,5 +231,50 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>   
 
+	<script type="text/javascript">
+
+    let commentsArray = [];
+
+	$(document).ready(function(){
+        const selectElement = (element) => document.querySelector(element);
+
+        selectElement('.navbar-nav').addEventListener("click", () => {
+            selectElement('header').classList.toggle('active');
+		});
+
+        $('.submit-comment').on('click', () =>{
+            let comment = $('.text-area-comment').val();
+            let commentsList;
+
+            $('.text-area-comment').val("");
+                    
+            if(!commentsArray.length > 0){
+                commentsList = '<ul class="comments-list"></ul>';
+
+                $('.comments-empty').remove();
+                $('#comments-div').append(commentsList);
+            }
+
+            commentsList = $('ul.comments-list');
+
+            let newComment = '<li id="comment-item-' + (commentsArray.length + 1) + '"><p class="comment">' +
+                                comment + 
+                                '</p></li>';
+                    
+            commentsList.append(newComment);
+
+            let selectorItem = '#comment-item-' + (commentsArray.length + 1);
+
+            $(selectorItem + ' .comment').css({
+                'padding': '.5rem 0 .5rem 1%'
+            });
+
+            $(selectorItem).effect('highlight', {color: "#f4f4f4"}, 2500);
+
+				commentsArray.push(comment);
+        });
+    });
+    </script>
+	
 </body>
 </html>
