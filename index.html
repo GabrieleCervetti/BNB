@@ -129,7 +129,7 @@
 
                 <div class="col-lg-3 col-md-12 col-sm-12 right-div">
                     <div class="row row-right">
-                        <div class="right">
+                        <div class="right-up">
                             <aside>                
                                 <aside class="card border-0 shadow">
                                     <div class="card-body">
@@ -151,7 +151,7 @@
                         </div>
                     </div>
                     <div class="row row-right">
-                        <div class="right">
+                        <div class="right-down">
                             <aside>                
                                 <aside class="card border-0 shadow">
                                     <div class="card-body">
@@ -238,8 +238,8 @@
 	$(document).ready(function(){
         const selectElement = (element) => document.querySelector(element);
 
-        selectElement('.navbar-nav').addEventListener("click", () => {
-            selectElement('header').classList.toggle('active');
+        selectElement('.right-up').addEventListener("click", () => {
+            selectElement('section').classList.toggle('active');
 		});
 
         $('.submit-comment').on('click', () =>{
